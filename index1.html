@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<style type="text/css">	
+		.box1{
+			position: absolute;
+			left: 150px;
+			top: 100px;
+			height: 50px;
+		}
+		.box2{
+			position: absolute;
+			left: 75px;
+			top: 700px;
+			height: 50px;
+		}
+		.box3{
+			position: absolute;
+			left: 400px;
+			top: 300px;
+			height: 50px;
+		}
+		.box4{
+			position: absolute;
+			left: 900px;
+			top: 70px;
+			height: 50px;
+		}
+		.win{
+			background-image: url(win.jpg);
+			background-size: 100% 100%;
+			display: none;
+		}
+		.bg-img{
+			background-image: url(loc1/back.jpg);
+			background-size: 100% 100%;
+		}
+	</style>
+</head>
+<body>
+	<div style="height: 800px;" class="row bg-img">
+		<div class="bg-primary col-1" style="height: 500px; ">
+			<div class="mx-auto col-8 pb-0 pr-0">
+				<img src="loc1/1.png" class="w-100">
+				<h5 class="t1" >Ртуть</h5>
+			</div>
+			<div class="mx-auto col-8 mt-3 pb-0 pr-0">
+				<img src="loc1/2.png" class="w-100">
+				<h5 class="t2">Желтый алмаз</h5>
+			</div>
+			<div class="mx-auto col-8 mt-3 pb-0 pr-0">
+				<img src="loc1/3.png" class="w-100">
+				<h5 class="t3">Алмаз</h5>
+			</div>
+			<div class="mx-auto col-8 mt-3 pb-0 pr-0">
+				<img src="loc1/4.png" class="w-100">
+				<h5 class="t4">Ляпис</h5>
+			</div>
+			<h1>СЧЕТ: <span class="score text-danger ml-5">0</span></h1>
+		</div>
+		<img src="loc1/1.png" class="box1">
+		<img src="loc1/2.png" class="box2">
+		<img src="loc1/3.png" class="box3">
+		<img src="loc1/4.png" class="box4">
+	</div>
+	<div class="win" style="height: 800px;">
+		
+	</div>
+<script type="text/javascript">
+	let score = 0;
+	document.querySelector( ".box1").onclick = function(){
+		alert( "Классно! Ты нашел ртуть")
+		document.querySelector( ".box1").style.display = "none"
+		score = score + 5
+		document.querySelector( ".score").innerHTML = score;
+		document.querySelector( ".t1").style.textDecoration = "line-through"
+		if (score == 8) {
+			document.querySelector( ".bg-img").style.display = "none";
+			document.querySelector( ".win").style.display = "block";
+		}
+	}
+	document.querySelector( ".box2").onclick = function(){
+		alert( "Классно! Ты нашел желтый алмаз")
+		document.querySelector( ".box2").style.display = "none";
+		score = score + 1;
+		document.querySelector( ".score").innerHTML = score;
+		document.querySelector( ".t2").style.textDecoration = "line-through";
+		if (score == 8) {
+			document.querySelector( ".bg-img").style.display = "none";
+			document.querySelector( ".win").style.display = "block";
+		}		
+	}
+	document.querySelector( ".box3").onclick = function(){
+		alert( "Классно! Ты нашел алмаз")
+		document.querySelector( ".box3").style.display = "none"
+		score = score + 1
+		document.querySelector( ".score").innerHTML = score;
+		document.querySelector( ".t3").style.textDecoration = "line-through"
+		if (score == 8) {
+			document.querySelector( ".bg-img").style.display = "none";
+			document.querySelector( ".win").style.display = "block";
+		}
+	}
+	document.querySelector( ".box4").onclick = function(){
+		alert( "Классно! Ты нашел ляпис")
+		document.querySelector( ".box4").style.display = "none"
+		score = score + 1
+		document.querySelector( ".score").innerHTML = score;
+		document.querySelector( ".t4").style.textDecoration = "line-through"
+		if (score == 8) {
+			document.querySelector( ".bg-img").style.display = "none";
+			document.querySelector( ".win").style.display = "block";
+		}
+	}
+</script>
+</body>
+</html>

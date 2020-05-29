@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<style type="text/css">
+		.katana{
+			width: 130px; border: white 2px solid; display: none
+		}
+		.hg{
+			width: 130px; border: white 2px solid; display: none
+		}
+		.school{
+			position: absolute;
+			top: 30%;
+			left: 70%;
+			height: 250px;
+			width: 275px;
+		}
+		.arena{
+			top:60%;
+			position: absolute;
+			left:40%;
+			height: 250px;
+			width: 275px;
+			
+		}
+		.find{
+			position: absolute;
+			top:20%;
+			left: 30%;
+			height: 150px;
+			width: 175px;
+			
+		}
+		.box1{
+			position: absolute;
+			left: 150px;
+			top: 100px;
+			height: 50px;
+		}
+		.box2{
+			position: absolute;
+			left: 75px;
+			top: 700px;
+			height: 50px;
+		}
+		.box3{
+			position: absolute;
+			left: 400px;
+			top: 300px;
+			height: 50px;
+		}
+		.box4{
+			position: absolute;
+			left: 900px;
+			top: 70px;
+			height: 50px;
+		}
+		
+		.bg-img{
+			background-image: url(loc1/back.jpg);
+			background-size: 100% 100%;
+		}
+		.start2{
+		background-image: url(loc3/1.jpg);
+		background-size: 100% 100%;
+		height: 370px;
+		width: 650px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 140px;
+		transition: 1s;
+		}
+		.loc2_message{
+			display: none;
+			height: 250px;
+			width: 250px;
+			position: absolute;
+			left: 50%;
+			top: 5%;
+			background-image: url(loc2/talk.png);
+			background-size: 100% 100%;
+		}
+		.box21{
+			width: 200px;
+			height: 300px;
+			position: absolute;
+			display: none;
+			transition: 1s;
+		}
+		.loc2_shpors {
+			background-color: gray; width: 100px; position: absolute;
+			display: none
+		}
+		.start{
+			background-image: url(loc2/start.jpg);
+			background-size: 100% 100%;
+			height: 370px;
+			width: 680px;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 140px;
+		}
+		.box{
+			width: 650px;
+			text-align: center;
+			margin-top: 50px;
+			margin-left: auto;
+			margin-right: auto;
+			display: none;
+		}
+		.img{
+			height: 350px;
+		}
+		.ans{
+			width: 650px;
+		}
+		.loc3_message{
+			display: none;
+			height: 250px;
+			width: 250px;
+			position: absolute;
+			left: 35%;
+			top: 35%;
+			background-image: url(loc2/talk.png);
+			background-size: 100% 100%;
+		}
+		.main_player{
+			position: absolute;
+			top:50%;
+			left: 50%;
+			height: 175px;
+			width: 150px;
+			transition: 1s;
+		}
+		.loc1_message {
+			display: none;
+			height: 250px;
+			width: 250px;
+			position: absolute;
+			left: 35%;
+			top: 35%;
+			background-image: url(loc2/talk.png);
+			background-size: 100% 100%;
+	}
+
+	</style>
+</head>
+<body style="background-image: url(back.jpg); background-size: 100%" class="body1">
+	<div class="main" style="height: 800px">
+ 		<div class="katana">
+			<img src="sword.png">
+		</div>
+		<div class="hg">
+			<img src="hg.png" class="w-100">
+		</div>
+		<div class="school">
+			<img src="school.png" class="w-100">
+		</div>
+		<div class="arena">
+			<img src="arena.png" class="w-100">
+		</div>
+		<div class="find">
+			<img src="find.png" class="w-100">
+		</div>
+		<img src="player.png" alt="" class="main_player">
+	</div>
+
+	<!--локация 1-->
+	<div class="location1" style="display: none">
+		<div style="height: 800px;" class="row bg-img ">
+			<div class="bg-primary col-1" style="height: 500px; ">
+				<div class="mx-auto col-8 pb-0 pr-0">
+					<img src="loc1/1.png" class="w-100">
+					<h5 class="t1" >Ртуть</h5>
+				</div>
+				<div class="mx-auto col-8 mt-3 pb-0 pr-0">
+					<img src="loc1/2.png" class="w-100">
+					<h5 class="t2">Желтый алмаз</h5>
+				</div>
+				<div class="mx-auto col-8 mt-3 pb-0 pr-0">
+					<img src="loc1/3.png" class="w-100">
+					<h5 class="t3">Алмаз</h5>
+				</div>
+				<div class="mx-auto col-8 mt-3 pb-0 pr-0">
+					<img src="loc1/4.png" class="w-100">
+					<h5 class="t4">Ляпис</h5>
+				</div>
+				<h1>СЧЕТ: <span class="score text-danger ml-5">0</span></h1>
+				
+				<h4>Время: <span class="timer_span"></span></h4>
+			</div>
+			<img src="loc1/1.png" class="box1">
+			<img src="loc1/2.png" class="box2">
+			<img src="loc1/4.png" class="box3">
+			<img src="loc1/3.png" class="box4">
+		</div>
+			
+		
+		<div class="loc1_message"></div>
+	</div>
+
+	<!--2 локация-->
+	<div class="location2" style="display: none">
+		<h6>Клики: <span class="loc2_click">0</span></h6>
+		<h6 class="text-light loc2_timeSize">Время: <span class="loc2_timeText ">15</span></h6>
+		<div class="start2"></div>
+
+		<div class="box21" style="top: 45%; left: 5%;">
+			<img src="loc3/2.jpg" class="w-100">
+		</div>
+		<div class="box21" style="left: 80%; top: 70%">
+			<img src="loc3/3.jpg" class="w-100">
+		</div>
+		<div class="box21" style="left: 50%; top: 72%">
+			<img src="loc3/4.jpg" class="w-100">
+		</div>
+		<div class="box21" style="left: 42%; top: 6% ">
+			<img src="loc3/5.jpg" class="w-100">
+		</div>
+		<div class="box21" style="left: 80%; top: 10% ">
+			<img src="loc3/6.jpg" class="w-100">
+		</div>
+
+		<div class="loc2_message"></div>
+		<div class="loc2_shpors">Этот самоцвет черного цвета с твердостью 5</div>
+	</div>
+
+	<!--3 локация-->
+	<div class="location3" style="display: none">
+			<div class="start">
+				<h4 class="story text-center text-light">вас тестирует химичка. решается что у вас будет. вы готовы к бою</h4>
+			</div>
+
+	<!--первый вопрос-->
+	<div class="box">
+		<h2>Как называется явление когда минерал раскалывается по плоским поверхностям?</h2>
+		<img src="loc2/1.jpg" class="img">
+		<div class="ans right border border-primary rounded-pill mt-1 bg-success">
+			<h3>cпайность</h3>
+		</div>
+		<div class="ans wrong border border-primary rounded-pill mt-1 bg-success">
+			<h3>слоистость</h3>
+		</div>
+		<div class="ans wrong border border-primary rounded-pill mt-1 bg-success">
+			<h3>хрупкость</h3>
+		</div>
+	</div>
+
+	<!--Второй вопрос-->
+	<div class="box">
+		<h2>Триболюминесценция - это свечение минерала, вызванное</h2>
+		<img src="loc2/2.jpg" class="img">	
+		<div class="ans wrong border border-primary rounded-pill mt-1 bg-light">
+			<h3>энергией химических реакций</h3>
+		</div>
+		<div class="ans wrong border border-primary rounded-pill mt-1 bg-light">
+			<h3>звуком высокой частоты</h3>
+		</div>
+		<div class="ans right border border-primary rounded-pill mt-1 bg-light">
+			<h3>растиранием, раздавливанием, раскалыванием или царапанием иглой</h3>
+		</div>
+	</div>
+
+	<!--Третий вопрос-->
+	<div class="box">
+		<h2>Какая твёрдость по 10-бальной шкале у ляпис лазурит</h2>
+		<img src="loc2/3.jpg" class="img">	
+		<div class="ans right border border-primary rounded-pill mt-1 bg-primary">
+			<h3>5,5</h3>
+		</div>
+		<div class="ans wrong border border-primary rounded-pill mt-1 bg-primary">
+			<h3>5</h3>
+		</div>
+		<div class="ans wrong border border-primary rounded-pill mt-1 bg-primary">
+			<h3>6,5</h3>
+		</div>
+	</div>
+
+	<!--Четвертый вопрос-->
+	<div class="box">
+		<h2>Кто предложил шкалу, в которой минералы группируются в соответствии с их относительной твёрдостью по десятибальной шкале?</h2>
+		<img src="loc2/4.jpg" class="img">	
+		<div class="ans wrong border border-primary rounded-pill mt-1 bg-danger">
+			<h3>Александр Ферсман</h3>
+		</div>
+		<div class="ans right border border-primary rounded-pill mt-1 bg-danger">
+			<h3>Фридрих Моос</h3>
+		</div>
+		<div class="ans wrong border border-primary rounded-pill mt-1 bg-danger">
+			<h3>Аристотель Стагирский</h3>
+		</div>
+	</div>
+
+	<!--Пятый вопрос-->
+	<div class="box">
+		<h2>Какому самоцвету характерно образование двойников?</h2>
+		<img src="loc2/5.jpg" class="img">
+		<div class="ans right border border-primary rounded-pill mt-1 bg-dark text-light">
+			<h3>призрачный кварц</h3>
+		</div>	
+		<div class="ans wrong border border-primary rounded-pill mt-1 bg-dark text-light">
+			<h3>бенитоит</h3>
+		</div>
+		<div class="ans wrong border border-primary rounded-pill mt-1 bg-dark text-light">
+			<h3>нептунит</h3>
+		</div>
+	</div>
+
+	<div class="box">
+		<h2 class="end">Вы прошли тест</h2>
+		<img src="loc2/start.jpg" class="img img_end" style="margin-top: 15px; margin-bottom: 15px;">
+		<h2 class="end"> Ваши баллы:</h2>
+		<h2 class="end"> <span class="score_end"></span>/5</h2>
+		
+	</div>
+	</div>
+
+<script type="text/javascript">
+	let find = document.querySelector( ".find")
+	let main_player = document.querySelector( ".main_player")
+	let main_block = document.querySelector(".main");
+	let location1 = document.querySelector( ".location1")
+	let body = document.querySelector( ".body1")
+	let loc1_mes = document.querySelector( ".loc1_message")
+
+	let time = 15
+	let score = 0;
+
+	let loc1_box1 = document.querySelector( ".box1")
+	let loc1_box2 = document.querySelector( ".box2")
+	let loc1_box3 = document.querySelector( ".box3")
+	let loc1_box4 = document.querySelector( ".box4")
+	let score_elem = document.querySelector( ".score")
+	let t1 = document.querySelector( ".t1")
+	let bg_img1 = document.querySelector( ".bg-img")
+	let hg = document.querySelector( ".hg")
+	let timer_span = document.querySelector( ".timer_span")
+
+	let klik = document.querySelector( ".arena")
+	let location2 = document.querySelector( ".location2")
+	let loc2_mes = document.querySelector(".loc2_message")
+	let phos2 = document.querySelector( ".start2")
+	let click = 0
+	let loc2_shpors = document.querySelector( ".loc2_shpors")
+	let boxes2 = document.querySelectorAll( ".box21")
+	let click1 = 0
+	let katana = document.querySelector( ".katana")
+	let timer_span2 = document.querySelector( ".loc2_timeText")
+	let time2 = 15
+	let loc2_score = 0
+	let click_span = document.querySelector( ".loc2_click")
+
+	let school = document.querySelector( ".school")
+	let location3 = document.querySelector( ".location3")
+	let loc3_start = document.querySelector( ".start")
+	let box = document.querySelectorAll( ".box")
+	let wrong = document.querySelectorAll( ".wrong")
+	let right = document.querySelectorAll( '.right')
+	let score_end = document.querySelector( ".score_end")
+	let loc3_score = 0
+	let img_end = document.querySelector( ".img_end")
+
+	find.onclick = function(){
+		main_player.style.top = "20%"
+		main_player.style.left = "30%"
+
+		let changeLocation1 = function (){
+			main_block.style.display = "none"
+			location1.style.display = "block"; 
+	        body.style.backgroundImage = "url(loc1/back.jpg)";
+
+	        let ShowMessage1 = function(){
+	        	loc1_mes.innerHTML = "Найди все предметы, а главное камень с ртутью"
+	        	loc1_mes.style.color = "black"
+            	loc1_mes.style.paddingTop = 75 + "px"
+            	loc1_mes.style.paddingLeft = 20 + "px"
+	        	loc1_mes.style.display = "block"
+
+	        	loc1_box1.onclick = function(){
+					alert( "Классно! Ты нашел ртуть")
+					loc1_box1.style.display = "none"
+					score = score + 5
+					score_elem.innerHTML = score;
+					t1.style.textDecoration = "line-through"
+					if (score == 8) {
+						bg_img1.style.display = "none";
+
+						location1.style.display = "none"
+		            	main_block.style.display = "block"
+		            	body.style.backgroundImage = "url(back.jpg)"
+
+		            	hg.style.display = "block"
+		            	clearInterval(loc1_timer)
+					}
+				}
+				loc1_box2.onclick = function(){
+					
+					loc1_box2.style.display = "none";
+					score = score + 1
+					score_elem.innerHTML = score;
+					t1.style.textDecoration = "line-through"
+					if (score == 8) {
+						bg_img1.style.display = "none";
+
+						location1.style.display = "none"
+		            	main_block.style.display = "block"
+		            	body.style.backgroundImage = "url(back.jpg)"
+
+		            	hg.style.display = "block"
+		            	clearInterval(loc1_timer)
+					}
+				}
+				loc1_box3.onclick = function(){
+					
+					loc1_box3.style.display = "none"
+					score = score + 1
+					score_elem.innerHTML = score;
+					t1.style.textDecoration = "line-through"
+					if (score == 8) {
+						bg_img1.style.display = "none";
+
+						location1.style.display = "none"
+		            	main_block.style.display = "block"
+		            	body.style.backgroundImage = "url(back.jpg)"
+
+		            	hg.style.display = "block"
+		            	clearInterval(loc1_timer)
+					}
+				}
+				loc1_box4.onclick = function(){
+					
+					loc1_box4.style.display = "none"
+					score = score + 1
+					score_elem.innerHTML = score;
+					t1.style.textDecoration = "line-through"
+					if (score == 8) {
+						bg_img1.style.display = "none";
+
+						location1.style.display = "none"
+		            	main_block.style.display = "block"
+		            	body.style.backgroundImage = "url(back.jpg)"
+
+		            	hg.style.display = "block"
+		            	clearInterval(loc1_timer)
+					}
+				}
+
+	        		let timer = function(){
+		            		time = time - 1
+		            		timer_span.innerHTML = time
+		            		if (time == 0 && score < 8) {
+		            			alert( "Время вышло. Пройди заново")
+		            			time = 15
+		            			score = 0
+		            			score_span.innerHTML = score
+		            			//clearInterval(loc1_timer)
+		            		}
+		            	}
+
+		            	let loc1_timer = setInterval(timer,1000)
+	        }
+	        setTimeout(ShowMessage1, 3000)
+        }
+        setTimeout(changeLocation1,1000)
+	}
+
+	klik.onclick = function(){
+		main_player.style.top = "60%"
+		main_player.style.left = "40%"
+
+		let changeLocation2 = function(){
+			main_block.style.display = "none"
+			location2.style.display = "block"; 
+	        body.style.backgroundImage = "url(loc3/back.jpg)";
+
+	        let showMessage2 = function(){
+	        	loc2_mes.innerHTML = "Разбей Фос, нажав на нее 3 раз, чтобы получить подсказку и начать игру"
+	        	loc2_mes.style.color = "black"
+            	loc2_mes.style.paddingTop = 75 + "px"
+            	loc2_mes.style.paddingLeft = 20 + "px"
+	        	loc2_mes.style.display = "block"
+
+	        	phos2.onclick = function(){
+	        		click = click + 1
+	        		if (click == 3) {
+	        			phos2.style.backgroundImage = "url(loc3/1.2.jpg)"
+	        			loc2_mes.style.display = "none"
+	        			loc2_shpors.style.display = "block"
+
+	        			let startGame = function(){
+	        				loc2_shpors.style.display = "none"
+	        				phos2.style.display = "none"
+	        				for(let i=0;i<5;i++){
+	        					boxes2[i].style.display = "block"
+
+	        					boxes2[0].onclick = function(){
+	        						click1 = click1 + 1
+	        						click_span.innerHTML = click1
+	        						if (click1 >= 5 && time2 > 0) {
+	        							boxes2[0].src = "url(2.1.jpg)"
+	        							alert("ты угадал")
+
+
+	        							location2.style.display = "none"
+						            	main_block.style.display = "block"
+						            	body.style.backgroundImage = "url(back.jpg)"
+
+
+						            	katana.style.display = "block"
+						            	clearInterval(loc2_timer)
+	        						}
+	        						
+	        					}
+	        					boxes2[1].onclick = function(){
+	        						alert( "не тот самоцвет")
+	        					}
+	        					boxes2[2].onclick = function(){
+	        						alert( "не тот самоцвет")
+	        					}
+	        					boxes2[3].onclick = function(){
+	        						alert( "не тот самоцвет")
+	        					}
+	        					boxes2[4].onclick = function(){
+	        						alert( "не тот самоцвет")
+	        					}
+	        					
+	        				}
+	        				let timer2 = function(){
+			            		time2 = time2 - 1
+			            		timer_span2.innerHTML = time2
+			            		if (time2 == 0 && click1 < 5) {
+			            			alert( "Время вышло. Пройди заново")
+			            			time2 = 15
+			            			click1 = 0
+			            			click_span.innerHTML = click1
+			            		}
+            				}
+		            		let loc2_timer = setInterval(timer2,1000)
+	        			}
+	        			setTimeout(startGame, 3000)
+	        		}
+
+	        	} 	
+	        }
+	        setTimeout(showMessage2, 3000)
+		}
+		setTimeout(changeLocation2, 1000)
+	}
+
+	school.onclick = function(){
+		main_player.style.top = "30%"
+		main_player.style.left = "70%"
+
+			let changeLocation3 = function(){
+				main_block.style.display = "none"
+				location3.style.display = "block"; 
+		        body.style.backgroundImage = "none";
+
+		        loc3_start.onclick = function(){
+				loc3_start.style.display = "none"
+				box[0].style.display  = "block";
+			}
+
+			for(let i=0;i<5;i++){
+				right[i].onclick = function(){
+					loc3_score = loc3_score + 1
+					box[i].style.display = "none"
+					box[i+1].style.display = "block"
+					if (loc3_score != 0) {
+						score_end.innerHTML = loc3_score
+					}
+				}
+				wrong[i].onclick = function(){
+					loc3_score = loc3_score - 1
+					box[i].style.display = "none"
+					box[i+1].style.display = "block"
+					if (loc3_score != 0) {
+						score_end.innerHTML = loc3_score
+					}
+				}
+			}
+
+				score_end.innerHTML = loc3_score
+				
+			}
+			img_end.onclick = function(){
+					location3.style.display = "none"
+	            	main_block.style.display = "block"
+	            	main_block.style.backgroundImage = "url(win.jpg)"
+	            	main_block.style.backgroundSize = "100% 100%"
+	            	main_player.style.display = "none"
+	            	school.style.display = "none"
+	            	klik.style.display = "none"
+	            	find.style.display = 'none'
+	            	hg.style.display = "none"
+	            	katana.style.display = "none"
+				}
+			setTimeout(changeLocation3, 1000)
+	}
+
+
+</script>
+</body>
+</html>

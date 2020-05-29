@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<style type="text/css">
+		.start3{
+			background-image: url(loc3/1.jpg);
+			background-size: 100% 100%;
+			height: 370px;
+			width: 650px;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 140px;
+			transition: 1s;
+		}
+		.loc3_message{
+			display: none;
+			height: 250px;
+			width: 250px;
+			position: absolute;
+			left: 50%;
+			top: 5%;
+			background-image: url(loc2/talk.png);
+			background-size: 100% 100%;
+		}
+		.box31{
+			width: 200px;
+			height: 300px;
+			position: absolute;
+			display: none;
+		}
+		.loc3_shpors {
+			background-color: gray; width: 100px; position: absolute;
+			display: none
+		}
+	</style>
+</head>
+<body style="background-image: url(loc3/back.jpg); background-size: 100%">
+	<h1>попытки: <span class="point">3</span></h1>
+	<h6 class="text-light loc2_timeSize">Время: <span class="loc2_timeText ">10</span></h6>
+	<div class="start3"></div>
+
+	<div class="box31" style="top: 45%; left: 5%;">
+		<img src="loc3/2.jpg" class="w-100">
+	</div>
+	<div class="box31" style="left: 80%; top: 70%;">
+		<img src="loc3/3.jpg" class="w-100">
+	</div>
+	<div class="box31" style="left: 50%; top: 72%; ">
+		<img src="loc3/4.jpg" class="w-100">
+	</div>
+	<div class="box31" style="left: 42%; top: 6% ; ">
+		<img src="loc3/5.jpg" class="w-100">
+	</div>
+	<div class="box31" style="left: 80%; top: 10% ;">
+		<img src="loc3/6.jpg" class="w-100">
+	</div>
+
+	<div class="loc3_message"></div>
+	<div class="loc3_shpors">Этот самоцвет черного цвета</div>
+
+<script type="text/javascript">
+	let phos = document.querySelector( "start3")
+	let loc3_mes = document.querySelector( ".loc3_message")
+
+	let click = 0
+ 
+ 	let showMessage = function(){
+ 		loc3_mes.innerHTML = "Разбей Фос, нажав на нее 3 раз, чтобы получить подсказку"
+    	loc3_mes.style.color = "black"
+    	loc3_mes.style.paddingTop = 75 + "px"
+    	loc3_mes.style.paddingLeft = 20 + "px"
+    	loc3_mes.style.display = "block"
+
+    	phos.onclick = function(){
+    		click = click + 1
+    		if (click == 3) {
+    			phos2.style.backgroundImage = "url(loc3/1.2.jpg)"
+    			loc3_mes.style.display = "none"
+	        	loc3_shpors.style.display = "block"
+    		}
+    	}
+ 	}
+ 	setTimeout(showMessage, 2000)
+</script>
+</body>
+</html>
